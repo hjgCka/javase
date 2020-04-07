@@ -38,6 +38,9 @@ public class ClientWithResponseHandler {
             String responseBody = httpclient.execute(httpget, responseHandler);
             System.out.println("----------------------------------------");
             System.out.println(responseBody);
+        } catch (Exception e) {
+            //如果handleResponse中有异常，这里能够捕获到
+            e.printStackTrace();
         } finally {
             httpclient.close();
         }
