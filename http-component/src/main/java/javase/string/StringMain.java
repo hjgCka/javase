@@ -7,7 +7,7 @@ public class StringMain {
     public static void main(String[] args) {
         String str = "移动小智";
 
-        //unicode编码是\u开头的十六进制数，表示在unicode字符集中的位置(有4个字节定位位置)。
+        //unicode编码是\\u开头的十六进制数，表示在unicode字符集中的位置(有4个字节定位位置)。
         //除此之外还有utf-8, utf-16等多种编码方式，它们一般是可变长的编码方式，解决数据传输过大问题。
         String unicode = stringToUnicode(str);
         //\u79fb\u52a8\u5c0f\u667a
