@@ -1,4 +1,4 @@
-package com.hjg.plain.javase.http;
+package javase.http;
 
 import org.apache.http.*;
 import org.apache.http.client.CookieStore;

@@ -1,4 +1,4 @@
-package com.hjg.plain.javase.http;
+package javase.http;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
