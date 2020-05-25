@@ -37,13 +37,15 @@ public class ResponseFutureCompleteApp {
         long start = System.nanoTime();
 
         //map是中间操作，如果只到map这里为止，实际上并不会打印出字符串。
-        CompletableFuture[] futures = findPricesStream("myPhone").map(f -> f.thenAccept(System.out::println))
+        CompletableFuture[] futures = findPricesStream("myPhone")
+                .map(f -> f.thenAccept(System.out::println))
                 .toArray(size -> new CompletableFuture[size]);
 
         //这个方法等待所有任务执行完才会返回
         //CompletableFuture.allOf(futures).join();
 
         CompletableFuture.allOf(futures).whenComplete((result, ex) -> {
+            //CompletableFuture.allOf返回的是CompletableFuture<Void>
             System.out.println("result = " + result + ", ex = " + ex);
         }).join();
 
