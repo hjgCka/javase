@@ -12,6 +12,7 @@
     <modules>
         <module>http-component</module>
         <module>concurrent-module</module>
+        <module>proxy</module>
     </modules>
 
     <dependencies>
