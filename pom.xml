@@ -13,6 +13,7 @@
         <module>http-component</module>
         <module>concurrent-module</module>
         <module>proxy</module>
+        <module>mybatis</module>
     </modules>
 
     <dependencies>
