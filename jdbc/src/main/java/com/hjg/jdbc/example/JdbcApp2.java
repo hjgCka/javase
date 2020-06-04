@@ -11,23 +11,32 @@ public class JdbcApp2 {
         String user = "root";
         String password = "12345678";
 
+        //prepareStatement更好的性能和安全性。准备查询并重用它。
+        //使用了MySQL5的预编译功能。但是防止SQL注入是在PreparedStatement中实现的，和服务器无关。
         String querySql = "SELECT * FROM t_blog WHERE id_ = ?";
 
         try (
                 Connection connection = DriverManager.getConnection(url, user, password);
                 PreparedStatement stat = connection.prepareStatement(querySql)
         ) {
-            //prepareStatement更好的性能和安全性。准备查询并重用它。
-            //使用了MySQL5的预编译功能。但是防止SQL注入是在PreparedStatement中实现的，和服务器无关。
-            stat.setString(1, "1");
-            ResultSet rs = stat.executeQuery();
-            while (rs.next()){
-                String dbId = rs.getString(1);
-                String title=  rs.getString(2);
-                Date createTime = rs.getDate(3);
-                System.out.println("dbId = " + dbId + ", title = " + title +
-                        ", createTime = " + createTime);
+            connection.setAutoCommit(false);
+
+            try {
+                stat.setString(1, "1");
+                ResultSet rs = stat.executeQuery();
+                while (rs.next()){
+                    String dbId = rs.getString(1);
+                    String title=  rs.getString(2);
+                    Date createTime = rs.getDate(3);
+                    System.out.println("dbId = " + dbId + ", title = " + title +
+                            ", createTime = " + createTime);
+                }
+            } catch (Exception e) {
+                connection.rollback();
             }
+
+            connection.commit();
+
         }
     }
 }
