@@ -15,6 +15,7 @@
         <module>proxy</module>
         <module>mybatis</module>
         <module>jdbc</module>
+        <module>spring-mybatis</module>
     </modules>
 
     <dependencies>
