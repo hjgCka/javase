@@ -26,8 +26,9 @@ public class DynamicApp {
             System.out.println("key = " + key + ", value = " + value);
         }
 
-        //该方法使用了Class.forName来导入接口Class
-        //Class.forName()，loader指定装载参数类所用的类装载器，如果null则用bootstrp装载器。
+        //该方法使用了Class.forName有3个参数的重载方法来导入接口Class
+        //Class.forName(p1, p2, p3)，p3指定的是类加载器，如果null则用bootstrp装载器。
+        //Class.forName(p1)，默认使用调用者的类加载器
         ClassLoader mainCls = Thread.currentThread().getContextClassLoader();
         Worker proxy = (Worker)Proxy.newProxyInstance(mainCls, new Class[]{Worker.class}, workerHandler);
 
