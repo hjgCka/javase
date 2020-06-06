@@ -7,7 +7,7 @@ public class JdbcApp2 {
 
     public static void main(String[] args) throws SQLException {
 
-        String url = "jdbc:mysql://10.168.55.88:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false";
+        String url = "jdbc:mysql://10.168.55.88:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true";
         String user = "root";
         String password = "12345678";
 
