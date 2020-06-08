@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-mybatis</artifactId>
+    <artifactId>mybatis-spring</artifactId>
     <properties>
         <spring.version>5.2.6.RELEASE</spring.version>
     </properties>
