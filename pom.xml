@@ -17,6 +17,7 @@
         <module>jdbc</module>
         <module>mybatis-spring</module>
         <module>string</module>
+        <module>stream</module>
     </modules>
 
     <dependencies>
