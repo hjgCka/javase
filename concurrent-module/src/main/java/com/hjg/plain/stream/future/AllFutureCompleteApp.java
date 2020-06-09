@@ -1,4 +1,4 @@
-package com.hjg.plain.future;
+package com.hjg.plain.stream.future;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  * 需要对多个商店查询某件商品价格，其中获取商品的方法和查询折扣的方法都是阻塞的。
  * 需要快速响应，而不是等待所有商品都查询出来才给出全部的响应。
  */
-public class ResponseFutureCompleteApp {
+public class AllFutureCompleteApp {
 
     private static List<Shop> shops = Arrays.asList(new Shop("BestPrice"),
             new Shop("LetsSaveBig"),

@@ -1,4 +1,4 @@
-package com.hjg.plain.future;
+package com.hjg.plain.stream.future;
 
 import java.util.Arrays;
 import java.util.List;

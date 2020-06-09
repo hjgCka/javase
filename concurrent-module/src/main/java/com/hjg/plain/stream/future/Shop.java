@@ -1,4 +1,4 @@
-package com.hjg.plain.future;
+package com.hjg.plain.stream.future;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
