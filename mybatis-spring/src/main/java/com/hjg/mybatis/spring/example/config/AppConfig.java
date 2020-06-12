@@ -2,17 +2,24 @@ package com.hjg.mybatis.spring.example.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
 
+//不再一个个注册映射器类，而是扫描类路径来发现映射器类
+@MapperScan({"com.hjg.mybatis.spring.example.mapper"})
 @Configuration
-@PropertySource({"/com/hjg/jdbc/jdbc.properties"})
+@PropertySource({"classpath:/com/hjg/jdbc/jdbc.properties"})
 public class AppConfig {
 
     /**
@@ -35,6 +42,8 @@ public class AppConfig {
         return new JdbcProperties();
     }
 
+    //=====================mybatis========================
+
     @Bean
     public DataSource dataSource(JdbcProperties jdbcProperties) {
         HikariConfig config = new HikariConfig();
@@ -48,4 +57,27 @@ public class AppConfig {
         HikariDataSource ds = new HikariDataSource(config);
         return ds;
     }
+
+    @Bean
+    public SqlSessionFactory sqlSessionFactoryBean(DataSource dataSource) throws Exception {
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSource);
+
+        //指定mybatis配置文件
+        ClassPathResource mybatisConfigResource = new ClassPathResource("com/hjg/mybatis/mybatis-config.xml");
+        sqlSessionFactoryBean.setConfigLocation(mybatisConfigResource);
+
+        //指定mapper.xml文件，如果在映射器类的同目录下找不到映射器配置文件
+        //mybatis配置文件也可以指定mappers标签
+        ClassPathResource mapperResource = new ClassPathResource("com/hjg/mybatis/mapper/*Mapper.xml");
+        sqlSessionFactoryBean.setMapperLocations(mapperResource);
+
+        return sqlSessionFactoryBean.getObject();
+    }
+
+    @Bean
+    public DataSourceTransactionManager dataSourceTransactionManager(DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
+    }
+
 }
