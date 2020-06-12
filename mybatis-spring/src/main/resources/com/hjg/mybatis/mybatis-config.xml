@@ -9,7 +9,7 @@
     <!--配置 settings typeAliases mappers 标签-->
     <!--mappers标签和SqlSessionFactory的MapperLocations不要重复 -->
     <typeAliases>
-        <typeAlias type="blog" alias="com.hjg.mybatis.spring.example.model.Blog"/>
+        <typeAlias alias="blog" type="com.hjg.mybatis.spring.example.model.Blog"/>
     </typeAliases>
 
 </configuration>

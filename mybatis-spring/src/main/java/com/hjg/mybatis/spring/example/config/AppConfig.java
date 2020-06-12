@@ -7,11 +7,14 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
@@ -20,6 +23,7 @@ import javax.sql.DataSource;
 @MapperScan({"com.hjg.mybatis.spring.example.mapper"})
 @Configuration
 @PropertySource({"classpath:/com/hjg/jdbc/jdbc.properties"})
+@ComponentScan({"com.hjg.mybatis.spring.example.service.impl"})
 public class AppConfig {
 
     /**
@@ -69,8 +73,10 @@ public class AppConfig {
 
         //指定mapper.xml文件，如果在映射器类的同目录下找不到映射器配置文件
         //mybatis配置文件也可以指定mappers标签
-        ClassPathResource mapperResource = new ClassPathResource("com/hjg/mybatis/mapper/*Mapper.xml");
-        sqlSessionFactoryBean.setMapperLocations(mapperResource);
+
+        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        Resource[] resources = resolver.getResources("com/hjg/mybatis/mapper/*Mapper.xml");
+        sqlSessionFactoryBean.setMapperLocations(resources);
 
         return sqlSessionFactoryBean.getObject();
     }
