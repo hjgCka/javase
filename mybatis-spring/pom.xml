@@ -15,6 +15,7 @@
     </properties>
 
     <dependencies>
+        <!--Spring 核心依赖包-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -40,7 +41,6 @@
             <artifactId>spring-expression</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
@@ -58,6 +58,7 @@
             <version>${spring.version}</version>
         </dependency>
 
+        <!--mybatis jdbc 数据源 事务包-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
