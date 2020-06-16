@@ -1,4 +1,4 @@
-package javase.string;
+package com.plain.string;
 
 import java.nio.charset.StandardCharsets;
 
