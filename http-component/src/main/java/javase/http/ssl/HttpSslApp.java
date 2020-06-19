@@ -20,7 +20,10 @@ public class HttpSslApp {
             //请求到https且httpClient没有SSL配置，依然能请求成功。
             //因为https://www.baidu.com购买的域名是CA机构颁发的，所以可以直接通过；
             // 否则是需要客户端进行服务器证书校验，但是可以绕过服务端证书校验，即客户端相信该证书
-            HttpGet httpget = new HttpGet("https://www.baidu.com");
+
+            //https://10.153.61.36/harbor/sign-in https://www.baidu.com
+            String address = "https://10.153.61.36/harbor/sign-in";
+            HttpGet httpget = new HttpGet(address);
 
             System.out.println("Executing request " + httpget.getRequestLine());
 
