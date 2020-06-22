@@ -18,6 +18,10 @@ public class StringApp {
         String[] array = {"222", "111"};
         String listStr = Stream.of(array).collect(Collectors.joining(","));
         System.out.println(listStr);
+
+        String unicodeStr = "\\u79fb\\u52a8\\u5c0f\\u667a\\u670d\\u52a1\\u53f7";
+        String wechatId = unicodeToString(unicodeStr);
+        System.out.println("wechatId=" + wechatId);
     }
 
     //String对象转换为原始的unicode编码。
