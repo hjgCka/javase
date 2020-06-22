@@ -1,5 +1,8 @@
 package com.plain.string;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class StringApp {
 
     public static void main(String[] args) {
@@ -11,6 +14,10 @@ public class StringApp {
 
         String str2 = unicodeToString(unicode);
         System.out.println("str2=" + str2);
+
+        String[] array = {"222", "111"};
+        String listStr = Stream.of(array).collect(Collectors.joining(","));
+        System.out.println(listStr);
     }
 
     //String对象转换为原始的unicode编码。
