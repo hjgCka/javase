@@ -19,6 +19,7 @@
         <module>string</module>
         <module>stream</module>
         <module>jackson</module>
+        <module>resource</module>
     </modules>
 
     <dependencies>
