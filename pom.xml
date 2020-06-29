@@ -12,7 +12,7 @@
     <modules>
         <module>http-component</module>
         <module>concurrent-module</module>
-        <module>proxy</module>
+        <module>proxy-classloader</module>
         <module>mybatis</module>
         <module>jdbc</module>
         <module>mybatis-spring</module>

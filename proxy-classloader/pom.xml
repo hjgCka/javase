@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>proxy</artifactId>
+    <!--这个属性值可以任意修改，而在其父级的pom.xml的module值，需要与目录相同-->
+    <artifactId>proxy-classloader</artifactId>
 
 
 </project>
