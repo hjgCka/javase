@@ -21,6 +21,7 @@
         <module>jackson</module>
         <module>resource</module>
         <module>collections</module>
+        <module>encryption</module>
     </modules>
 
     <dependencies>
