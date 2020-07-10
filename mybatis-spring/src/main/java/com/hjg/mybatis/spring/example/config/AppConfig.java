@@ -15,6 +15,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
@@ -74,7 +75,8 @@ public class AppConfig {
         //指定mapper.xml文件，如果在映射器类的同目录下找不到映射器配置文件
         //mybatis配置文件也可以指定mappers标签
 
-        PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        //通过一个路径获取多个Resource对象
+        ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource[] resources = resolver.getResources("com/hjg/mybatis/mapper/*Mapper.xml");
         sqlSessionFactoryBean.setMapperLocations(resources);
 
