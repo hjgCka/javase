@@ -35,11 +35,8 @@ public class ClassLoaderResourceApp3 {
             } else {
                 System.out.println(jarEntry.getName());
             }
-
         }
 
-        //JarInputStream等也能读写jar文件内容。
-
-        //Jar类同与Zip，同样有ZipInputStream ZipFile ZipEntry等类。
+        //Jar类同与Zip，同样有ZipInputStream ZipFile ZipEntry等类分别用于读写jar和zip文件。
     }
 }
