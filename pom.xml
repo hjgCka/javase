@@ -20,6 +20,7 @@
         <module>collections</module>
         <module>encryption</module>
         <module>mail</module>
+        <module>date-time</module>
     </modules>
 
     <dependencies>
