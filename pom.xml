@@ -21,6 +21,7 @@
         <module>encryption</module>
         <module>mail</module>
         <module>date-time</module>
+        <module>others</module>
     </modules>
 
     <dependencies>
