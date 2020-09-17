@@ -22,6 +22,8 @@
         <module>mail</module>
         <module>date-time</module>
         <module>others</module>
+        <module>poi</module>
+        <module>xml</module>
     </modules>
 
     <dependencies>
