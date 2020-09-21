@@ -22,7 +22,7 @@ public class ExampleEventUserModel2 {
         //  you need to process the core Workbook stream.
         // Normally it's of the form rId# or rSheet#
         //rId2表示工作簿中的第二个sheet
-        InputStream sheet2 = r.getSheet("rId2");
+        InputStream sheet2 = r.getSheet("rId1");
         InputSource sheetSource = new InputSource(sheet2);
         parser.parse(sheetSource);
         sheet2.close();
@@ -88,6 +88,7 @@ public class ExampleEventUserModel2 {
             // Do now, as characters() may be called more than once
             if(nextIsString) {
                 int idx = Integer.parseInt(lastContents);
+                System.out.println("idx = " + idx);
                 lastContents = sst.getItemAt(idx).getString();
                 nextIsString = false;
             }
