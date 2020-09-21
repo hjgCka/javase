@@ -7,7 +7,7 @@
     <groupId>com.hjg.plain</groupId>
     <artifactId>javase</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <modules>
         <module>http-component</module>
@@ -24,6 +24,7 @@
         <module>others</module>
         <module>poi</module>
         <module>xml</module>
+        <module>ftp</module>
     </modules>
 
     <dependencies>
