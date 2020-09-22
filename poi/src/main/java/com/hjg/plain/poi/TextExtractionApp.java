@@ -97,9 +97,10 @@ public class TextExtractionApp {
 
         @Override
         public void endDocument() {
-            if(phoneList.size() > 0) {
+            int length = phoneList.size();
+            if(length > 0) {
                 batchId++;
-                System.out.println("获得剩余手机号，进行最后一批处理。batchId = " + batchId + ", size = " + phoneList.size());
+                System.out.println("获得剩余手机号，进行最后一批处理。batchId = " + batchId + ", last = " + phoneList.get(length - 1));
                 phoneList.clear();
             }
         }
