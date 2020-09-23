@@ -25,6 +25,7 @@
         <module>poi</module>
         <module>xml</module>
         <module>ftp</module>
+        <module>io</module>
     </modules>
 
     <dependencies>
