@@ -46,9 +46,7 @@ public class FtpUtilTest {
         if(successed) {
 
             int count = FtpUtil.downloadFtpFile(ftpClient, remote, local);
-            if(count == 1) {
-                System.out.println("下载次数 count = " + count);
-            }
+            System.out.println("下载次数 count = " + count);
         } else {
             System.out.println("登陆失败");
         }
