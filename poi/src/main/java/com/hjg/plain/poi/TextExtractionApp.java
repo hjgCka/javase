@@ -8,6 +8,8 @@ import org.apache.poi.util.XMLHelper;
 import org.apache.poi.xssf.eventusermodel.XSSFReader;
 import org.apache.poi.xssf.model.SharedStringsTable;
 import org.apache.poi.xssf.model.StylesTable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -25,6 +27,8 @@ import java.util.List;
  * @createdOn: 2020/9/16
  */
 public class TextExtractionApp {
+
+    private static final Logger logger = LoggerFactory.getLogger(TextExtractionApp.class);
 
     public void processSheet(InputStream is) throws IOException, OpenXML4JException, SAXException, ParserConfigurationException {
         OPCPackage pkg = OPCPackage.open(is);
@@ -154,7 +158,7 @@ public class TextExtractionApp {
             if(phoneList.size() == 1000) {
                 //同时传递batchId，如果为1，则需要从下标1开始访问
                 batchId++;
-                System.out.println("获得1000个手机号，进行一批处理。batchId = " + batchId + ", [0] = " + phoneList.get(0));
+                logger.info("获得1000个手机号，进行一批处理。batchId = {}, [0] = {}", batchId, phoneList.get(0));
                 phoneList.clear();
             }
         }
@@ -169,7 +173,7 @@ public class TextExtractionApp {
             int length = phoneList.size();
             if(length > 0) {
                 batchId++;
-                System.out.println("获得剩余手机号，进行最后一批处理。batchId = " + batchId + ", last = " + phoneList.get(length - 1));
+                logger.info("获得剩余手机号，进行最后一批处理。batchId = {}, last = {}", batchId, phoneList.get(length - 1));
                 phoneList.clear();
             }
         }
@@ -202,9 +206,9 @@ public class TextExtractionApp {
             textExtractionApp.processSheet(is);
 
             long span = System.currentTimeMillis() - startTime;
-            System.out.println("span = " + span);
+            logger.info("span = {}", span);
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error("解析文件错误", e);
         }
     }
 }
