@@ -27,6 +27,7 @@
         <module>ftp</module>
         <module>io</module>
         <module>logback-deamo</module>
+        <module>iText-demo</module>
     </modules>
 
     <dependencies>
