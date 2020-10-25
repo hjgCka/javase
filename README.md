@@ -14,7 +14,7 @@
 
 ### encryption
 
-Java的加密和解密。
+参考《Java的加密解密的艺术》。
 
 ### http-component
 
@@ -35,3 +35,5 @@ Java的加密和解密。
 ### string
 
 用于写String类的用法。
+
+### End
