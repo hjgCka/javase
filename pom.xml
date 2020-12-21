@@ -21,13 +21,13 @@
         <module>encryption</module>
         <module>mail</module>
         <module>date-time</module>
-        <module>others</module>
         <module>poi</module>
         <module>xml</module>
         <module>ftp</module>
         <module>io</module>
         <module>logback-deamo</module>
         <module>iText-demo</module>
+        <module>demo-common-utils</module>
     </modules>
 
     <dependencies>
