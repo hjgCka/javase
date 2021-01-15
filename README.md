@@ -1,4 +1,4 @@
-# javase
+## javase
 
 用于练习Java基础代码。
 
@@ -35,5 +35,9 @@
 ### string
 
 用于写String类的用法。
+
+### Jackson
+
+使用Jackson和JDK序列化机制。
 
 ### End
