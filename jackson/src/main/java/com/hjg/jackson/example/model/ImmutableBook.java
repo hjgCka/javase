@@ -3,6 +3,7 @@ package com.hjg.jackson.example.model;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.beans.ConstructorProperties;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -21,17 +22,12 @@ public class ImmutableBook implements Serializable {
     @Getter
     private transient BigDecimal price;
 
-    /**
-     * 对于这种无继承关系的类，没有无参构造函数也能正常序列化。
-     * @param name
-     * @param date
-     * @param price
-     */
+    @ConstructorProperties({"name", "date", "price"})
     public ImmutableBook(String name, Date date, BigDecimal price) {
         this.name = name;
         this.date = date;
         this.price = price;
-        System.out.println("构造immutableBook");
+        System.out.println("构造ImmutableBook");
     }
 
 
