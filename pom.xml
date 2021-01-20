@@ -28,6 +28,7 @@
         <module>logback-deamo</module>
         <module>iText-demo</module>
         <module>demo-common-utils</module>
+        <module>formatter</module>
     </modules>
 
     <dependencies>
