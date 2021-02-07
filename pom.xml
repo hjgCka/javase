@@ -9,6 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
     <modules>
         <module>http-component</module>
         <module>concurrent-module</module>
@@ -29,6 +34,7 @@
         <module>iText-demo</module>
         <module>demo-common-utils</module>
         <module>formatter</module>
+        <module>reflect</module>
     </modules>
 
     <dependencies>

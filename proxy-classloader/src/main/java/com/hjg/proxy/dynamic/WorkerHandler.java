@@ -11,6 +11,14 @@ public class WorkerHandler implements InvocationHandler {
         this.target = target;
     }
 
+    /**
+     * 该方法被JDK产生的代理类对象所调用。
+     * @param proxy      JDK产生的代理类对象。
+     * @param method     代理的方法。
+     * @param args       方法的产生。
+     * @return
+     * @throws Throwable
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         String methodName = method.getName();

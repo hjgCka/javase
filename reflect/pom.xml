@@ -9,15 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <!--这个属性值可以任意修改，而在其父级的pom.xml的module值，需要与目录相同-->
-    <artifactId>proxy-classloader</artifactId>
+    <artifactId>reflect</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>3.3.0</version>
-        </dependency>
-    </dependencies>
 
 </project>
