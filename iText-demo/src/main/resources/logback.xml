@@ -25,7 +25,7 @@
     <!--com.hjg.logback这个包下，只能输出info或更高层级的日志。-->
     <logger name = "com.hjg.logback" level = "info" />
 
-    <root level="debug">
+    <root level="info">
         <appender-ref ref="STDOUT" />
         <!--<appender-ref ref="FILE" />-->
     </root>
