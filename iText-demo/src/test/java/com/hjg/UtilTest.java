@@ -1,6 +1,6 @@
 package com.hjg;
 
-import com.hjg.itext.util.MyResourceUtil;
+import com.hjg.itext.util.ITextResourceUtil;
 import org.junit.Test;
 
 /**
@@ -13,9 +13,9 @@ public class UtilTest {
     @Test
     public void resourceTest() {
         String csv1 = "united_states.csv";
-        System.out.println(MyResourceUtil.getFileName(csv1));
+        System.out.println(ITextResourceUtil.getAbsoluteFilePath(csv1));
 
         String csv2 = "ufo.csv";
-        System.out.println(MyResourceUtil.getFileName(csv2));
+        System.out.println(ITextResourceUtil.getAbsoluteFilePath(csv2));
     }
 }

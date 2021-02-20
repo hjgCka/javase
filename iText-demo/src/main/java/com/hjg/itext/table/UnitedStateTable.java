@@ -1,6 +1,6 @@
 package com.hjg.itext.table;
 
-import com.hjg.itext.util.MyResourceUtil;
+import com.hjg.itext.util.ITextResourceUtil;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -45,7 +45,7 @@ public class UnitedStateTable {
             Table table = new Table(new float[]{4, 1, 3, 4, 3, 3, 3, 3, 1});
             table.setWidth(UnitValue.createPercentValue(100));
 
-            String fileName = MyResourceUtil.getFileName(DATA);
+            String fileName = ITextResourceUtil.getAbsoluteFilePath(DATA);
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             String line = br.readLine();
             process(table, line, bold, true);

@@ -1,6 +1,6 @@
 package com.hjg.itext.table;
 
-import com.hjg.itext.util.MyResourceUtil;
+import com.hjg.itext.util.ITextResourceUtil;
 import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.Color;
 import com.itextpdf.kernel.colors.ColorConstants;
@@ -71,7 +71,7 @@ public class Ufo {
         Table table = new Table(new float[]{3, 5, 7, 4});
         table.setWidth(UnitValue.createPercentValue(100));
 
-        String fileName = MyResourceUtil.getFileName(DATA);
+        String fileName = ITextResourceUtil.getAbsoluteFilePath(DATA);
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = br.readLine();
         process(table, line, helveticaBold, true);
