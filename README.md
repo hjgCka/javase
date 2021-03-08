@@ -6,6 +6,8 @@
 
 用于普通的集合的用法。
 
+Reference的实例。
+
 ### concurrent-module
 
 代码来自Java8 in action，主要写的是异步计算CompleteableFuture用法。
