@@ -1,4 +1,4 @@
-package com.hjg.collections.example.map;
+package com.hjg.collections.map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
